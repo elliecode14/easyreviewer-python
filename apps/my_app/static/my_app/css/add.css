@@ -1,0 +1,164 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #ecebe8;
+    color: #444f45;
+    text-align: center;
+    font-size: 20px;
+}
+a{
+  text-decoration: none;
+}
+.header{
+    width: 100%;
+    background: #93b874;
+    color: #444f45;
+    text-align: left;
+    height: 50px;
+  }
+  .header h2{
+    padding: 8px;
+    display: inline-block;
+  }
+  .header h1{
+    display: inline-block;
+    color: white;
+    font-weight: lighter;
+    position: absolute;
+    left: 38%;
+  }
+  .form_content{
+    background: white;
+    padding: 20px;
+    margin: 5% 15% 5% 15%;
+    border-radius: 5px;
+  }
+  .nav p{
+    display: inline-block;
+    text-align: right;
+    padding: 10px;
+  }
+  .nav a{
+    color: #444f45;
+  }
+  .nav{
+    display: inline-block;
+    position: absolute;
+    right: 5px;
+  }
+  input{
+    width: 100%;
+    margin: 5px 0px 15px 0px;
+  }
+  h5{
+    font-weight: lighter;
+  }
+  /*  */
+.form_content{
+    font-size: 30px;
+}
+.form_content input{
+    font-size: 20px;
+}
+.form_content select {
+    font-size: 20px;
+}
+.form_content h3{
+    color: rgb(20, 78, 78);
+    font-family: cursive, Arial, Helvetica, sans-serif;
+    margin-bottom: 30px; 
+    
+}
+
+#button{
+    padding: 10px;
+    color: white;
+    background: #93b874;
+    /* margin:5px; */
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 8px;
+}
+textarea{
+    font-size: 20px;
+    padding: 5px;
+    background-color: rgba(232, 243, 243, 0.384);
+    border: 1px solid rgba(128, 128, 128, 0.178);   
+    max-width: 250px;
+}
+.left_content{
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+}
+.right_content{
+    display: inline-block;
+    text-align: left;
+    margin-left: 10%;
+}
+.messages{
+    color: red;
+    font-size: 15px;
+    list-style-type: none;
+    background: rgba(212, 137, 137, 0.21);
+    border-radius: 5px;
+    padding: 5px 25px 5px 25px;
+}
+/* @media screen and (max-width: 700px) {
+  .header {
+    height: 100%;
+    
+  }
+  .header h1{
+    font-size: 20px;
+    display: inline;
+  }
+  .nav a{
+    font-size: 20px;
+    color: blue;
+    display: inline;
+  }
+}
+ */
+
+ @media screen and (max-width: 1000px) {
+  .header h1{
+    display: inline-block;
+    color: transparent;
+    font-weight: lighter;
+    position: absolute;
+    left: 0%;
+  }
+  }
+@media screen and (max-width: 700px) {
+  .header{
+    width: 100%;
+    background: #93b874;
+    color: #444f45;
+    text-align: left;
+    min-height: 50px;
+    /* position: fixed; */
+  }
+  .header h1{
+  display: inline-block;
+  color: transparent;
+  font-weight: lighter;
+  position: absolute;
+  left: 0%;
+}
+.header h2{
+  color: transparent;
+}
+.nav{
+  display: inline-block;
+  position: absolute;
+  position: fixed;
+  background: #93b874;
+  width: 100%;
+  /* right: 5px; */
+  text-align: center;
+}
+}

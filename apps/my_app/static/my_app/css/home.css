@@ -1,0 +1,152 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    text-align: center;
+    font-size: 20px;
+    background: #ecebe8;
+    color: #444f45;
+}
+.header{
+  width: 100%;
+  background: #93b874;
+  color: #444f45;
+  text-align: left;
+  height: 50px;
+}
+.header h2{
+  padding: 8px;
+  display: inline-block;
+}
+.header h1{
+  display: inline-block;
+  color: white;
+  font-weight: lighter;
+  position: absolute;
+  left: 38%;
+}
+
+.left_content{
+  /* width: 90%; */
+  width: 605px;
+  min-width: 200px;
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.nav p{
+  display: inline-block;
+  text-align: right;
+  padding: 10px;
+}
+.nav a{
+  color: #444f45;
+}
+.nav{
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+}
+.scroll{
+    height: 650px;
+    width: 300px;
+    overflow: auto;
+    display: inline-block;
+    text-align: left;
+}
+.scroll p{
+    padding: 3px;
+}
+.books_list{
+    display: inline-block;
+    padding: 20px;
+    margin: 3% 0% 0% 5%;
+    max-height: 600px;
+}
+.books_list p{
+    margin: 5px;
+}
+.content{
+    display: inline-block;
+    padding: 20px 20px 20px 0px;
+    vertical-align: top;
+    text-align: left;
+    margin-top: 3%;
+}
+#book_info{
+    margin-left: 26px;
+}
+#rating{
+    font-size: 15px;
+}
+#date{
+    font-size: 15px; 
+    margin-bottom: 15px; 
+}
+
+a{
+    text-decoration: none;
+    color: green;
+}
+#title{
+  color: #444f45;
+  font-weight: lighter;
+}
+/*  */
+  .button {
+    font-size: 0.5em;
+    padding: 5px;
+    color: white;
+    border-radius: 10px/40px;
+    text-decoration: none;
+    cursor: pointer;
+    background: teal;
+    transition: all 0.1s ease-in-out;
+    margin-left: 90%;
+  }
+  .button:hover {
+    background: rgb(53, 211, 211);
+  }
+
+
+@media screen and (max-width: 1000px) {
+  .header h1{
+    display: inline-block;
+    color: transparent;
+    font-weight: lighter;
+    position: absolute;
+    left: 0%;
+  }
+  }
+@media screen and (max-width: 700px) {
+  .header{
+    width: 100%;
+    background: #93b874;
+    color: #444f45;
+    text-align: left;
+    min-height: 50px;
+    /* position: fixed; */
+  }
+  .header h1{
+  display: inline-block;
+  color: transparent;
+  font-weight: lighter;
+  position: absolute;
+  left: 0%;
+}
+.header h2{
+  color: transparent;
+}
+.nav{
+  display: inline-block;
+  position: absolute;
+  position: fixed;
+  background: #93b874;
+  width: 100%;
+  /* right: 5px; */
+  text-align: center;
+}
+}

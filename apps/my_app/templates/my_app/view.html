@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'my_app/css/view_review.css' %}">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">    
+    <title>{{book.title}}</title>
+</head>
+<body>
+    <!-- <div class="header">
+        <p><a href="/home">Home</a></p> |
+        <p><a href="/logout">Log out</a></p>
+    </div> -->
+
+    <div class="header">
+        <h2>EZReviewer <i class="fa fa-star-half-o" aria-hidden="true"></i></h2>
+        <!-- <h1>Welcome {{this_user.alias}}!</h1> -->
+        <h1>{{book.title}}</h1>
+        <div class="nav">
+            <p><a href="/home"><i class="fa fa-home" aria-hidden="true"></i> Home</a></p>
+            <p><a href="/books/add"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Book and Review</a></p>
+            <p><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log out</a></p>
+        </div>
+    </div>
+   
+    
+    <div class="container">
+            <h3>Author: {{book.author}}</h3>
+        <!-- <h1>{{book.title}}</h1> -->
+        <br>
+        <h2>Reviews</h2>
+        {% for r in reviews %}
+            <div class="content">
+                <p>Rating: {{r.rating}} stars </p>
+                <p><a href="/users/{{r.reviewer.id}}"><i class="fa fa-user-o" aria-hidden="true"></i> {{r.reviewer.alias}}: </a> 
+                {{r.content}}
+                </p>
+                <p id="date">Posted on: {{r.created_at|date:"F d, Y"}} 
+                {% if request.session.user_id == r.reviewer.id %}
+                    <a href="/delete/{{book.id}}/{{r.id}}"> <i class="fa fa-trash-o" aria-hidden="true"></i> Delete Review </a>
+                {% endif %}
+            </p>
+        </div>
+            {% endfor %} 
+    </div>
+    <div class="container_right">
+            <div>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %} {% endif %}
+                            {{ message }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+        <form action="/newreviews/{{book.id}}" method="POST">{% csrf_token %}
+            <textarea name="review" cols="30" rows="13" placeholder="Write a review here..."></textarea>
+            <h5>Rating:
+                <select name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> 
+                stars.
+            </h5>
+            <input type="submit" value="Submit Review">
+        </form>
+    </div>
+</body>
+</html>
